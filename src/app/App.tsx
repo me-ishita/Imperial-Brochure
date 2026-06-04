@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { MetallicCard } from "./components/MetallicCard";
 import { SectionLabel } from "./components/SectionLabel";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
-import imperialLogo from "../../assets/image.png";
+import image from "../assets/image.png";
 
 const NAV_ITEMS = [
   { label: "Why Partner", id: "why-partner" },
@@ -78,7 +78,7 @@ export default function App() {
           {/* Logo area */}
           <div className="flex items-center gap-3 flex-shrink-0">
             <ImageWithFallback
-              src={imperialLogo}
+              src={image}
               alt="Imperial College London"
               className="object-contain rounded-sm"
               style={{ width: "36px", height: "36px" }}
@@ -1531,7 +1531,7 @@ export default function App() {
             >
               <div className="flex items-center gap-3 flex-shrink-0">
                 <ImageWithFallback
-                  src={imperialLogo}
+                  src={image}
                   alt="Imperial College London"
                   className="object-contain rounded-sm"
                   style={{ width: "36px", height: "36px" }}
