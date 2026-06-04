@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { MetallicCard } from "./components/MetallicCard";
 import { SectionLabel } from "./components/SectionLabel";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
-import imperialLogo from "../imports/image.png";
+import imperialLogo from "../../assets/image.png";
 
 const NAV_ITEMS = [
   { label: "Why Partner", id: "why-partner" },
