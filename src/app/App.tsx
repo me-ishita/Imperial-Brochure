@@ -3,16 +3,16 @@ import { useState, useEffect } from "react";
 import { MetallicCard } from "./components/MetallicCard";
 import { SectionLabel } from "./components/SectionLabel";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
-import image from "../assets/image.png";
+import imperialLogo from "../assets/image.png";
+import imperialHero from "../assets/Imperial-College.png";
 
 const NAV_ITEMS = [
-  { label: "Why Partner", id: "why-partner" },
+  { label: "Global Standing", id: "global-standing" },
+  { label: "Entrepreneurial Core", id: "entrepreneurial-core" },
+  { label: "Our Community", id: "our-community" },
   { label: "Strategic Objectives", id: "objectives" },
   { label: "What Imperial Brings", id: "imperial-brings" },
-  { label: "What FS Brings", id: "fs-brings" },
   { label: "Flagship Components", id: "flagship" },
-  { label: "Talent Pipeline", id: "talent" },
-  { label: "Climate Solutions", id: "climate" },
   { label: "Governance", id: "governance" },
   { label: "Roadmap", id: "roadmap" },
 ];
@@ -60,9 +60,9 @@ export default function App() {
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
           background: scrolled
-            ? "rgba(8,13,26,0.92)"
-            : "rgba(8,13,26,0.6)",
-          backdropFilter: "blur(16px)",
+            ? "rgba(8,13,26,0.95)"
+            : "transparent",
+          backdropFilter: scrolled ? "blur(16px)" : "blur(8px)",
           borderBottom: scrolled
             ? "1px solid rgba(201,169,110,0.15)"
             : "1px solid transparent",
@@ -78,7 +78,7 @@ export default function App() {
           {/* Logo area */}
           <div className="flex items-center gap-3 flex-shrink-0">
             <ImageWithFallback
-              src={image}
+              src={imperialLogo}
               alt="Imperial College London"
               className="object-contain rounded-sm"
               style={{ width: "36px", height: "36px" }}
@@ -116,115 +116,17 @@ export default function App() {
         </div>
       </nav>
 
-      {/* ── Hero ── */}
+      {/* ── Hero Image ── */}
       <header
-        className="relative flex flex-col items-center justify-center text-center overflow-hidden"
-        style={{ minHeight: "100vh", paddingTop: "64px" }}
+        className="relative overflow-hidden"
+        style={{ paddingTop: "64px" }}
       >
-        {/* Background gradient orbs */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,169,110,0.07) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 20% 80%, rgba(74,127,165,0.06) 0%, transparent 60%)",
-          }}
+        <ImageWithFallback
+          src={imperialHero}
+          alt="Imperial College London"
+          className="w-full h-auto object-cover"
+          style={{ width: "100%", display: "block" }}
         />
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-[0.025]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(201,169,110,1) 1px, transparent 1px), linear-gradient(90deg, rgba(201,169,110,1) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <SectionLabel>
-            Strategic Partnership Brochure
-          </SectionLabel>
-          <h1
-            className="mb-6"
-            style={{
-              fontFamily: "Playfair Display, serif",
-              fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
-              fontWeight: 600,
-              lineHeight: 1.15,
-              color: "#e8e4d9",
-              letterSpacing: "-0.01em",
-            }}
-          >
-            Imperial College London
-            <br />
-            <span style={{ color: "var(--gold)" }}>
-              &amp; Financial Services
-            </span>
-          </h1>
-          <p
-            className="mb-10 mx-auto"
-            style={{
-              fontFamily: "Crimson Pro, Georgia, serif",
-              fontSize: "clamp(1.05rem, 2.2vw, 1.3rem)",
-              fontWeight: 300,
-              color: "#8a99b3",
-              maxWidth: "620px",
-              lineHeight: 1.75,
-              fontStyle: "italic",
-            }}
-          >
-            Partnering to develop the next generation of
-            financial leaders, scale climate solutions, and
-            accelerate the transition to a net&#8209;zero global
-            economy.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <div
-              className="px-4 py-2 rounded-full"
-              style={{
-                border: "1px solid rgba(201,169,110,0.3)",
-                color: "var(--muted-foreground)",
-                fontSize: "0.72rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-              }}
-            >
-              Prepared for: Financial Services Organisation
-            </div>
-            <div
-              className="px-4 py-2 rounded-full"
-              style={{
-                border: "1px solid rgba(201,169,110,0.3)",
-                color: "var(--muted-foreground)",
-                fontSize: "0.72rem",
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-              }}
-            >
-              June 2026
-            </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-          <span
-            style={{
-              fontSize: "0.6rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              color: "var(--muted-foreground)",
-            }}
-          >
-            Scroll
-          </span>
-          <div
-            className="w-px h-10"
-            style={{
-              background:
-                "linear-gradient(to bottom, rgba(201,169,110,0.6), transparent)",
-            }}
-          />
-        </div>
       </header>
 
       {/* ── Main content ── */}
@@ -232,13 +134,633 @@ export default function App() {
         className="max-w-7xl mx-auto px-6 pb-24"
         style={{ paddingTop: "6rem" }}
       >
-        {/* Section: Why Partner */}
+        {/* Section: Welcome to Imperial */}
+        <section id="welcome" className="mb-28 scroll-mt-20">
+          <SectionLabel>Welcome to Imperial</SectionLabel>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            Where scientific imagination leads to world‑changing
+            impact
+          </h2>
+
+          <MetallicCard className="p-8 mb-8" goldAccent>
+            <p
+              className="mb-4"
+              style={{
+                fontFamily: "Crimson Pro, Georgia, serif",
+                fontSize: "1.1rem",
+                fontWeight: 300,
+                color: "#c5bfb0",
+                lineHeight: 1.85,
+              }}
+            >
+              We are a world-leading university for science,
+              technology, engineering, medicine and business,
+              where scientific imagination leads to
+              world-changing impact. Founded in 1907 with a
+              mission to be useful, Imperial has spent more than
+              a century turning discovery into practical
+              progress for society.
+            </p>
+            <p
+              style={{
+                fontFamily: "Crimson Pro, Georgia, serif",
+                fontSize: "1.05rem",
+                fontWeight: 300,
+                color: "#8a99b3",
+                lineHeight: 1.85,
+              }}
+            >
+              Across our London campuses and international
+              network, Imperial brings together exceptional
+              teaching, world-class facilities and collaborative
+              working to unlock scientific imagination. The
+              university's story is one of passion, dedication
+              and the relentless pursuit of knowledge.
+            </p>
+          </MetallicCard>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                stat: "2nd in the world",
+                label: "QS World University Rankings 2026",
+                gold: true,
+              },
+              {
+                stat: "1st in the UK and Europe",
+                label: "Leading university in the region",
+                gold: true,
+              },
+              {
+                stat: "14 Nobel Prize winners",
+                label: "Recognizing groundbreaking research",
+                gold: false,
+              },
+              {
+                stat: "3 Fields Medal winners",
+                label: "Excellence in mathematics",
+                gold: false,
+              },
+              {
+                stat: "Gold TEF 2023",
+                label: "Teaching Excellence Framework",
+                gold: true,
+              },
+              {
+                stat: "University of the Year",
+                label: "For Graduate Employment 2026",
+                gold: true,
+              },
+            ].map((item) => (
+              <MetallicCard
+                key={item.stat}
+                className="p-7 text-center"
+                goldAccent={item.gold}
+                steelAccent={!item.gold}
+              >
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "2rem",
+                    fontWeight: 700,
+                    color: item.gold
+                      ? "var(--gold)"
+                      : "#7ab3d0",
+                    lineHeight: 1.15,
+                  }}
+                >
+                  {item.stat}
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.8rem",
+                    color: "#8a99b3",
+                    lineHeight: 1.6,
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {item.label}
+                </div>
+              </MetallicCard>
+            ))}
+          </div>
+        </section>
+
+        {/* Section: The Imperial Difference */}
+        <section className="mb-28">
+          <SectionLabel>The Imperial Difference</SectionLabel>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            Deliberately focused on shaping the future
+          </h2>
+
+          <MetallicCard className="p-8 mb-6" goldAccent>
+            <p
+              style={{
+                fontFamily: "Crimson Pro, Georgia, serif",
+                fontSize: "1.05rem",
+                fontWeight: 300,
+                color: "#c5bfb0",
+                lineHeight: 1.85,
+              }}
+            >
+              Imperial is deliberately focused. Rather than
+              trying to be all things to all students, it
+              concentrates on the disciplines that are shaping
+              the future economy and solving the world's most
+              pressing problems:{" "}
+              <strong
+                style={{
+                  color: "var(--gold)",
+                  fontWeight: 600,
+                }}
+              >
+                science, engineering, medicine and business
+              </strong>
+              .
+            </p>
+          </MetallicCard>
+
+          <MetallicCard className="p-8" steelAccent>
+            <p
+              style={{
+                fontSize: "0.95rem",
+                color: "#8a99b3",
+                lineHeight: 1.85,
+              }}
+            >
+              That focus creates a distinct culture. Students
+              learn among ambitious peers, with research-led
+              teaching, strong technical rigour and close links
+              between discovery, enterprise and employability.
+              The result is an education that feels both elite
+              and intensely practical.
+            </p>
+          </MetallicCard>
+        </section>
+
+        {/* Section: Global Standing */}
         <section
-          id="why-partner"
+          id="global-standing"
           className="mb-28 scroll-mt-20"
         >
+          <SectionLabel>Global Standing</SectionLabel>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            World-class rankings that matter
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+            <MetallicCard
+              className="p-7 text-center"
+              goldAccent
+            >
+              <div
+                className="mb-3"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "2.5rem",
+                  fontWeight: 700,
+                  color: "var(--gold)",
+                  lineHeight: 1.15,
+                }}
+              >
+                2nd
+              </div>
+              <div
+                style={{
+                  fontSize: "0.8rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.6,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                in the world
+                <br />
+                <span
+                  style={{
+                    color: "#6a7a8f",
+                    fontSize: "0.75rem",
+                  }}
+                >
+                  QS World University Rankings 2026
+                </span>
+              </div>
+            </MetallicCard>
+
+            <MetallicCard
+              className="p-7 text-center"
+              goldAccent
+            >
+              <div
+                className="mb-3"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "2.5rem",
+                  fontWeight: 700,
+                  color: "var(--gold)",
+                  lineHeight: 1.15,
+                }}
+              >
+                8th
+              </div>
+              <div
+                style={{
+                  fontSize: "0.8rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.6,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                in the world
+                <br />
+                <span
+                  style={{
+                    color: "#6a7a8f",
+                    fontSize: "0.75rem",
+                  }}
+                >
+                  THE World University Rankings 2026
+                </span>
+              </div>
+            </MetallicCard>
+
+            <MetallicCard
+              className="p-7 text-center"
+              steelAccent
+            >
+              <div
+                className="mb-3"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "2.5rem",
+                  fontWeight: 700,
+                  color: "#7ab3d0",
+                  lineHeight: 1.15,
+                }}
+              >
+                7th
+              </div>
+              <div
+                style={{
+                  fontSize: "0.8rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.6,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                in the world
+                <br />
+                <span
+                  style={{
+                    color: "#6a7a8f",
+                    fontSize: "0.75rem",
+                  }}
+                >
+                  QS Sustainability Rankings 2026
+                </span>
+              </div>
+            </MetallicCard>
+          </div>
+
+          <MetallicCard className="p-7">
+            <p
+              style={{
+                fontSize: "0.9rem",
+                color: "#8a99b3",
+                lineHeight: 1.85,
+              }}
+            >
+              These rankings reflect more than reputation alone.
+              They point to current excellence in teaching,
+              research, sustainability and employer recognition,
+              all of which strengthen the value of an Imperial
+              degree internationally.
+            </p>
+          </MetallicCard>
+        </section>
+
+        {/* Section: Research That Leads */}
+        <section className="mb-28">
+          <SectionLabel>Research That Leads</SectionLabel>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            World-leading research excellence
+          </h2>
+
+          <MetallicCard className="p-8 mb-6" goldAccent>
+            <p
+              className="mb-4"
+              style={{
+                fontFamily: "Crimson Pro, Georgia, serif",
+                fontSize: "1.05rem",
+                fontWeight: 300,
+                color: "#c5bfb0",
+                lineHeight: 1.85,
+              }}
+            >
+              According to the{" "}
+              <strong
+                style={{
+                  color: "var(--gold)",
+                  fontWeight: 600,
+                }}
+              >
+                Research Excellence Framework 2021
+              </strong>
+              , Imperial has a greater proportion of
+              world-leading 4-star research than any other UK
+              university. The same results place Imperial{" "}
+              <strong
+                style={{
+                  color: "var(--gold)",
+                  fontWeight: 600,
+                }}
+              >
+                first in the UK for research outputs and
+                research environment
+              </strong>
+              , and first for research impact among Russell
+              Group universities.
+            </p>
+            <p
+              style={{
+                fontSize: "0.95rem",
+                color: "#8a99b3",
+                lineHeight: 1.85,
+              }}
+            >
+              Imperial was also built on a distinguished history
+              of invention, from pioneering penicillin,
+              holography and fibre optics to today's frontier
+              work in climate, health, AI and advanced
+              engineering. The institution's research culture is
+              designed to solve major global challenges at pace
+              and scale.
+            </p>
+          </MetallicCard>
+        </section>
+
+        {/* Section: Built for Employability */}
+        <section className="mb-28">
+          <SectionLabel>Built for Employability</SectionLabel>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            University of the Year for Graduate Employment
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+            <MetallicCard
+              className="lg:col-span-3 p-8"
+              steelAccent
+            >
+              <p
+                className="mb-4"
+                style={{
+                  fontFamily: "Crimson Pro, Georgia, serif",
+                  fontSize: "1.05rem",
+                  fontWeight: 300,
+                  color: "#c5bfb0",
+                  lineHeight: 1.85,
+                }}
+              >
+                Imperial was named{" "}
+                <strong
+                  style={{ color: "#7ab3d0", fontWeight: 600 }}
+                >
+                  University of the Year for Graduate Employment
+                </strong>{" "}
+                in The Times and The Sunday Times Good
+                University Guide 2026. Its reputation page also
+                highlights consistently strong graduate
+                prospects and worldwide employer recognition.
+              </p>
+              <p
+                style={{
+                  fontSize: "0.95rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.85,
+                }}
+              >
+                Many Imperial courses are designed around
+                analytical, numerical and problem-solving
+                strengths, often using project work and real
+                industry scenarios. That gives graduates a
+                compelling route into science, technology,
+                finance, consulting, healthcare and
+                entrepreneurship.
+              </p>
+            </MetallicCard>
+
+            <div className="lg:col-span-2 grid grid-cols-1 gap-4">
+              {[
+                "Science",
+                "Technology",
+                "Finance",
+                "Consulting",
+                "Healthcare",
+                "Entrepreneurship",
+              ].map((field) => (
+                <MetallicCard
+                  key={field}
+                  className="p-4"
+                  goldAccent
+                >
+                  <div className="flex items-center justify-center">
+                    <span
+                      style={{
+                        fontSize: "0.85rem",
+                        color: "#c5bfb0",
+                        fontWeight: 500,
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      {field}
+                    </span>
+                  </div>
+                </MetallicCard>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section: Entrepreneurial Core */}
+        <section
+          id="entrepreneurial-core"
+          className="mb-28 scroll-mt-20"
+        >
+          <SectionLabel>Entrepreneurial Core</SectionLabel>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            Europe's leading university for startup creation
+          </h2>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <MetallicCard className="p-8" goldAccent>
+              <p
+                className="mb-6"
+                style={{
+                  fontSize: "0.95rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.85,
+                }}
+              >
+                Entrepreneurship is embedded in Imperial's
+                identity rather than treated as a side activity.
+                The Imperial Enterprise Lab, White City
+                Incubator, Scale Space and related hubs help
+                students, staff and alumni turn ideas into
+                ventures, products and services.
+              </p>
+              <div
+                className="p-5 rounded-xl"
+                style={{
+                  background: "rgba(201,169,110,0.08)",
+                  border: "1px solid rgba(201,169,110,0.2)",
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "1.8rem",
+                    fontWeight: 700,
+                    color: "var(--gold)",
+                    lineHeight: 1.2,
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  Europe's Leading
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.8rem",
+                    color: "#8a99b3",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  Large university for startup creation
+                  <br />
+                  <span
+                    style={{
+                      color: "#6a7a8f",
+                      fontSize: "0.75rem",
+                    }}
+                  >
+                    Redstone University Startup Index 2024
+                  </span>
+                </div>
+              </div>
+            </MetallicCard>
+
+            <MetallicCard className="p-8" steelAccent>
+              <h3
+                className="mb-4"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "1.1rem",
+                  color: "#7ab3d0",
+                  fontWeight: 600,
+                }}
+              >
+                Innovation Hubs
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "Imperial Enterprise Lab",
+                  "White City Incubator",
+                  "Scale Space",
+                  "FT Top 125 European Startup Hubs (2 locations)",
+                ].map((hub) => (
+                  <li
+                    key={hub}
+                    className="flex items-start gap-3"
+                  >
+                    <span
+                      style={{
+                        color: "#7ab3d0",
+                        fontSize: "0.45rem",
+                        marginTop: "0.5rem",
+                        flexShrink: 0,
+                      }}
+                    >
+                      ◆
+                    </span>
+                    <p
+                      style={{
+                        fontSize: "0.9rem",
+                        color: "#c5bfb0",
+                        lineHeight: 1.75,
+                      }}
+                    >
+                      {hub}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <p
+                className="mt-5"
+                style={{
+                  fontSize: "0.85rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.75,
+                  fontStyle: "italic",
+                }}
+              >
+                This gives founders access to one of the most
+                mature innovation ecosystems in Europe.
+              </p>
+            </MetallicCard>
+          </div>
+        </section>
+
+        {/* Section: Campuses */}
+        <section className="mb-28">
           <SectionLabel>
-            Why Imperial &amp; Financial Services
+            White City and South Kensington
           </SectionLabel>
           <h2
             className="mb-6"
@@ -249,129 +771,338 @@ export default function App() {
               fontWeight: 500,
             }}
           >
-            A convergence of research, capital, and talent
+            From the world's first innovation district to
+            today's modern campus
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-8">
-            <MetallicCard
-              className="lg:col-span-3 p-8"
-              goldAccent
-            >
-              <p
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <MetallicCard className="p-8" goldAccent>
+              <h3
+                className="mb-3"
                 style={{
-                  fontFamily: "Crimson Pro, Georgia, serif",
+                  fontFamily: "Playfair Display, serif",
                   fontSize: "1.15rem",
-                  fontWeight: 300,
-                  color: "#c5bfb0",
-                  lineHeight: 1.8,
+                  color: "var(--gold)",
+                  fontWeight: 600,
                 }}
               >
-                Imperial College London is ranked{" "}
-                <strong
-                  style={{
-                    color: "var(--gold)",
-                    fontWeight: 600,
-                  }}
-                >
-                  #2 in the world
-                </strong>{" "}
-                and{" "}
-                <strong
-                  style={{
-                    color: "var(--gold)",
-                    fontWeight: 600,
-                  }}
-                >
-                  #1 in Europe and the UK
-                </strong>
-                , while global financial institutions are
-                leading the mobilisation of capital for climate
-                and digital transformation.
-              </p>
+                South Kensington — Albertopolis
+              </h3>
               <p
-                className="mt-4"
                 style={{
-                  fontFamily: "Crimson Pro, Georgia, serif",
-                  fontSize: "1.05rem",
-                  fontWeight: 300,
+                  fontSize: "0.9rem",
                   color: "#8a99b3",
-                  lineHeight: 1.8,
+                  lineHeight: 1.85,
                 }}
               >
-                Together, Imperial and a leading financial
-                services organisation connect world‑class
-                research, global capital and entrepreneurial
-                talent to solve the most pressing challenges in
-                financial services.
+                South Kensington sits in{" "}
+                <strong style={{ color: "#e8e4d9" }}>
+                  Albertopolis, the world's first innovation
+                  district
+                </strong>
+                . This historic campus provides a prestigious
+                setting rich in scientific heritage and cultural
+                institutions.
               </p>
             </MetallicCard>
 
-            <div className="lg:col-span-2 grid grid-cols-1 gap-4">
-              {[
-                {
-                  icon: "◆",
-                  label:
-                    "Climate change and transition finance",
-                },
-                {
-                  icon: "◆",
-                  label: "Sustainable and impact investing",
-                },
-                {
-                  icon: "◆",
-                  label:
-                    "Digital assets, open banking and payments innovation",
-                },
-                {
-                  icon: "◆",
-                  label:
-                    "AI, data science and quantum technologies for risk, trading and fraud",
-                },
-              ].map((item) => (
-                <MetallicCard
-                  key={item.label}
-                  className="p-4"
-                  steelAccent
-                >
-                  <div className="flex items-start gap-3">
-                    <span
-                      style={{
-                        color: "var(--steel, #4a7fa5)",
-                        fontSize: "0.5rem",
-                        marginTop: "0.45rem",
-                        flexShrink: 0,
-                      }}
-                    >
-                      ◆
-                    </span>
-                    <p
-                      style={{
-                        fontSize: "0.85rem",
-                        color: "#c5bfb0",
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {item.label}
-                    </p>
-                  </div>
-                </MetallicCard>
-              ))}
-            </div>
+            <MetallicCard className="p-8" steelAccent>
+              <h3
+                className="mb-3"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "1.15rem",
+                  color: "#7ab3d0",
+                  fontWeight: 600,
+                }}
+              >
+                White City — Modern Innovation Campus
+              </h3>
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.85,
+                }}
+              >
+                White City is a modern innovation campus built
+                for collaboration, incubation and
+                commercialisation. It includes laboratories,
+                incubator space, prototyping facilities and
+                collaboration areas that connect researchers,
+                startups, corporates and investors.
+              </p>
+            </MetallicCard>
           </div>
 
-          <MetallicCard className="p-6">
+          <MetallicCard className="p-7 mt-6">
             <p
               style={{
-                fontSize: "0.88rem",
+                fontSize: "0.9rem",
                 color: "#8a99b3",
-                lineHeight: 1.75,
+                lineHeight: 1.85,
+                textAlign: "center",
               }}
             >
-              This partnership builds on Imperial's climate and
-              innovation commitments with the financial sector,
-              including cleantech accelerators and climate
-              innovation programmes under global climate
-              solutions initiatives.
+              Students benefit from being placed inside a live
+              ecosystem rather than a purely academic setting.
+            </p>
+          </MetallicCard>
+        </section>
+
+        {/* Section: Our Students and Community */}
+        <section
+          id="our-community"
+          className="mb-28 scroll-mt-20"
+        >
+          <SectionLabel>
+            Our Students and Community
+          </SectionLabel>
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            A global community of talent
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            {[
+              { number: "23,248", label: "Students" },
+              { number: "266,000", label: "Alumni worldwide" },
+              { number: "8,783", label: "Staff" },
+              {
+                number: "110+",
+                label: "Undergraduate courses",
+              },
+            ].map((stat, i) => (
+              <MetallicCard
+                key={stat.label}
+                className="p-7 text-center"
+                goldAccent={i % 2 === 0}
+                steelAccent={i % 2 === 1}
+              >
+                <div
+                  className="mb-2"
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "2rem",
+                    fontWeight: 700,
+                    color:
+                      i % 2 === 0 ? "var(--gold)" : "#7ab3d0",
+                    lineHeight: 1.15,
+                  }}
+                >
+                  {stat.number}
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.8rem",
+                    color: "#8a99b3",
+                    lineHeight: 1.6,
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {stat.label}
+                </div>
+              </MetallicCard>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <MetallicCard className="p-8" steelAccent>
+              <div
+                className="mb-4"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  color: "#7ab3d0",
+                  lineHeight: 1.15,
+                }}
+              >
+                200+
+              </div>
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.85,
+                }}
+              >
+                Masters courses across its range of campuses
+              </p>
+            </MetallicCard>
+
+            <MetallicCard className="p-8" goldAccent>
+              <div
+                className="mb-4"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "2rem",
+                  fontWeight: 700,
+                  color: "var(--gold)",
+                  lineHeight: 1.15,
+                }}
+              >
+                £10M+
+              </div>
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "#8a99b3",
+                  lineHeight: 1.85,
+                }}
+              >
+                Imperial Bursary support for home students in
+                2024/25, reflecting a commitment to widening
+                access and supporting talent
+              </p>
+            </MetallicCard>
+          </div>
+        </section>
+
+        {/* Section: Why Students Choose Imperial */}
+        <section className="mb-28">
+          <SectionLabel>
+            Why Students Choose Imperial
+          </SectionLabel>
+          <h2
+            className="mb-8"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#e8e4d9",
+              fontWeight: 500,
+            }}
+          >
+            Seven compelling differentiators
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {[
+              {
+                title: "Specialist Excellence",
+                desc: "Imperial focuses on science, engineering, medicine and business rather than broad generalism.",
+              },
+              {
+                title: "World-class Ranking",
+                desc: "It is ranked 2nd globally and 1st in the UK and Europe by QS 2026.",
+              },
+              {
+                title: "Research Intensity",
+                desc: "It leads the UK for the proportion of world-leading research in REF 2021.",
+              },
+              {
+                title: "Graduate Outcomes",
+                desc: "It was named University of the Year for Graduate Employment in 2026.",
+              },
+              {
+                title: "Startup Ecosystem",
+                desc: "Imperial offers an integrated platform through Enterprise Lab, White City Incubator and Scale Space.",
+              },
+              {
+                title: "Innovation District",
+                desc: "South Kensington and White City connect students to research, industry and venture creation.",
+              },
+              {
+                title: "Mission-led Impact",
+                desc: "Imperial was founded to be useful and continues to focus on scientific imagination with world-changing impact.",
+              },
+              {
+                title: "Global Community",
+                desc: "With 266,000 alumni worldwide and students from over 140 countries, Imperial offers a truly international network.",
+              },
+            ].map((item, i) => (
+              <MetallicCard
+                key={item.title}
+                className="p-6"
+                goldAccent={i % 3 === 0}
+                steelAccent={i % 3 !== 0}
+              >
+                <h3
+                  className="mb-2"
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "1.05rem",
+                    color:
+                      i % 3 === 0 ? "var(--gold)" : "#7ab3d0",
+                    fontWeight: 600,
+                  }}
+                >
+                  {item.title}
+                </h3>
+                <p
+                  style={{
+                    fontSize: "0.88rem",
+                    color: "#8a99b3",
+                    lineHeight: 1.75,
+                  }}
+                >
+                  {item.desc}
+                </p>
+              </MetallicCard>
+            ))}
+          </div>
+        </section>
+
+        {/* Section: Positioning Statement */}
+        <section className="mb-28">
+          <SectionLabel>Positioning Statement</SectionLabel>
+
+          <MetallicCard className="p-10" goldAccent>
+            <p
+              className="mb-5"
+              style={{
+                fontFamily: "Crimson Pro, Georgia, serif",
+                fontSize: "1.2rem",
+                fontWeight: 300,
+                color: "#e8e4d9",
+                lineHeight: 1.9,
+                fontStyle: "italic",
+              }}
+            >
+              Imperial is not simply a prestigious London
+              university. It is a{" "}
+              <strong
+                style={{
+                  color: "var(--gold)",
+                  fontWeight: 600,
+                }}
+              >
+                specialist, globally ranked institution
+              </strong>{" "}
+              where rigorous academic excellence meets frontier
+              research, entrepreneurial execution and practical
+              relevance.
+            </p>
+            <p
+              style={{
+                fontFamily: "Crimson Pro, Georgia, serif",
+                fontSize: "1.1rem",
+                fontWeight: 300,
+                color: "#c5bfb0",
+                lineHeight: 1.85,
+              }}
+            >
+              For students comparing Imperial with other top
+              universities, the distinction is clear: Imperial
+              combines elite scientific reputation with a
+              culture of impact, built for people who want not
+              only to study the future, but to{" "}
+              <strong
+                style={{
+                  color: "var(--gold)",
+                  fontWeight: 600,
+                }}
+              >
+                shape it
+              </strong>
+              .
             </p>
           </MetallicCard>
         </section>
@@ -720,94 +1451,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Section: What Financial Services Brings */}
-        <section id="fs-brings" className="mb-28 scroll-mt-20">
-          <SectionLabel>
-            What Financial Services Brings
-          </SectionLabel>
-          <h2
-            className="mb-4"
-            style={{
-              fontFamily: "Playfair Display, serif",
-              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-              color: "#e8e4d9",
-              fontWeight: 500,
-            }}
-          >
-            Global scale, capital &amp; market reach
-          </h2>
-          <p
-            className="mb-10"
-            style={{
-              fontSize: "0.9rem",
-              color: "#8a99b3",
-              maxWidth: "600px",
-              lineHeight: 1.75,
-            }}
-          >
-            Global financial institutions provide scale, capital
-            and multi‑market presence that move Imperial's
-            research and innovation from lab to market.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "Global Platform & Client Access",
-                body: "Corporate, institutional and wealth networks across Asia, the Middle East, Europe and the Americas give Imperial‑backed solutions a pathway to rapid adoption and impact.",
-                gold: true,
-              },
-              {
-                title:
-                  "Climate & Sustainable Finance Commitments",
-                body: "Leading financial services institutions commit significant philanthropic and commercial capital to climate solutions through multi‑year partnerships. Collaborations with Imperial enable this capital and expertise to be channelled into UK‑based innovation with global relevance.",
-                gold: false,
-              },
-              {
-                title: "Talent Development at Scale",
-                body: "Financial institutions' experience in delivering bespoke fintech and sustainability education programmes with top universities positions them as strong partners for high‑impact learning journeys.",
-                gold: false,
-              },
-              {
-                title: "Use‑cases, Data & Deployment",
-                body: "Partners can provide real data, pilot environments and feedback loops across retail, corporate, markets and wealth businesses, ensuring research addresses material business and regulatory challenges.",
-                gold: true,
-              },
-            ].map((item) => (
-              <MetallicCard
-                key={item.title}
-                className="p-7"
-                goldAccent={item.gold}
-                steelAccent={!item.gold}
-              >
-                <h3
-                  className="mb-3"
-                  style={{
-                    fontFamily: "Playfair Display, serif",
-                    fontSize: "1.05rem",
-                    fontWeight: 600,
-                    color: item.gold
-                      ? "var(--gold)"
-                      : "#7ab3d0",
-                    lineHeight: 1.35,
-                  }}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "0.85rem",
-                    color: "#8a99b3",
-                    lineHeight: 1.8,
-                  }}
-                >
-                  {item.body}
-                </p>
-              </MetallicCard>
-            ))}
-          </div>
-        </section>
-
         {/* Section: Flagship Partnership Components */}
         <section id="flagship" className="mb-28 scroll-mt-20">
           <SectionLabel>
@@ -976,164 +1619,6 @@ export default function App() {
               ))}
             </div>
           </MetallicCard>
-        </section>
-
-        {/* Section: Talent Pipeline */}
-        <section id="talent" className="mb-28 scroll-mt-20">
-          <SectionLabel>
-            Talent Pipeline &amp; Executive Education
-          </SectionLabel>
-          <h2
-            className="mb-4"
-            style={{
-              fontFamily: "Playfair Display, serif",
-              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-              color: "#e8e4d9",
-              fontWeight: 500,
-            }}
-          >
-            High‑calibre graduates &amp; bespoke learning
-            solutions
-          </h2>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-            <MetallicCard
-              className="lg:col-span-2 p-8"
-              goldAccent
-            >
-              <p
-                className="mb-4"
-                style={{
-                  fontSize: "0.9rem",
-                  color: "#8a99b3",
-                  lineHeight: 1.85,
-                }}
-              >
-                Imperial Business School graduates several
-                hundred specialists each year across Finance,
-                FinTech, Quantitative Finance, Risk Management,
-                Investment & Wealth Management, and Machine
-                Learning & Finance, with{" "}
-                <strong style={{ color: "#e8e4d9" }}>
-                  employability rates above 90%
-                </strong>{" "}
-                within six months and alumni in leading
-                financial institutions worldwide.
-              </p>
-              <p
-                style={{
-                  fontSize: "0.9rem",
-                  color: "#8a99b3",
-                  lineHeight: 1.85,
-                }}
-              >
-                Imperial Executive Education can jointly develop
-                online and blended programmes that equip leaders
-                with skills in fintech, AI, sustainable finance
-                and climate risk, building on its experience in
-                global sustainable finance programmes.
-              </p>
-            </MetallicCard>
-
-            <MetallicCard
-              className="p-7 flex flex-col justify-center"
-              steelAccent
-            >
-              <div className="text-center mb-6">
-                <div
-                  style={{
-                    fontFamily: "Playfair Display, serif",
-                    fontSize: "3.5rem",
-                    fontWeight: 700,
-                    color: "#7ab3d0",
-                    lineHeight: 1,
-                  }}
-                >
-                  90%+
-                </div>
-                <div
-                  style={{
-                    fontSize: "0.75rem",
-                    color: "#6a7a8f",
-                    letterSpacing: "0.08em",
-                    marginTop: "0.25rem",
-                  }}
-                >
-                  EMPLOYABILITY WITHIN 6 MONTHS
-                </div>
-              </div>
-              <div
-                style={{
-                  height: "1px",
-                  background: "rgba(74,127,165,0.2)",
-                  margin: "0 0 1.25rem",
-                }}
-              />
-              <div className="space-y-2">
-                {[
-                  "Finance",
-                  "FinTech",
-                  "Quantitative Finance",
-                  "Risk Management",
-                  "Investment & Wealth Management",
-                  "ML & Finance",
-                ].map((prog) => (
-                  <div
-                    key={prog}
-                    className="px-3 py-1.5 rounded"
-                    style={{
-                      background: "rgba(74,127,165,0.07)",
-                      fontSize: "0.75rem",
-                      color: "#7ab3d0",
-                      letterSpacing: "0.04em",
-                    }}
-                  >
-                    MSc {prog}
-                  </div>
-                ))}
-              </div>
-            </MetallicCard>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {[
-              {
-                title: "Structured Recruitment",
-                body: "Secure structured recruitment relationships for internships, analyst and associate roles across Imperial's talent pipeline.",
-              },
-              {
-                title: "Co‑designed Capstone Projects",
-                body: "Co‑design case studies and capstone projects based on real climate, digital and regulatory challenges your firm faces.",
-              },
-              {
-                title: "Scholarships & Prizes",
-                body: "Offer sponsored scholarships and prizes in sustainable finance, digital assets and climate innovation to attract top talent.",
-              },
-            ].map((item) => (
-              <MetallicCard key={item.title} className="p-6">
-                <h4
-                  className="mb-2"
-                  style={{
-                    fontFamily: "Playfair Display, serif",
-                    fontSize: "0.95rem",
-                    color: "var(--gold)",
-                    fontWeight: 600,
-                  }}
-                >
-                  {item.title}
-                </h4>
-                <p
-                  style={{
-                    fontSize: "0.82rem",
-                    color: "#8a99b3",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  {item.body}
-                </p>
-              </MetallicCard>
-            ))}
-          </div>
         </section>
 
         {/* Section: Climate Solutions */}
@@ -1531,7 +2016,7 @@ export default function App() {
             >
               <div className="flex items-center gap-3 flex-shrink-0">
                 <ImageWithFallback
-                  src={image}
+                  src={imperialLogo}
                   alt="Imperial College London"
                   className="object-contain rounded-sm"
                   style={{ width: "36px", height: "36px" }}
