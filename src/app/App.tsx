@@ -123,34 +123,108 @@ export default function App() {
             </p>
           </MetallicCard>
 
-          {/* Stats grid — 7 cards in 2 rows: 3 + 4 */}
+          {/* Stats grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             {[
-              { stat: "2nd in the world", label: "QS World University Rankings 2026", gold: true },
-              { stat: "1st in UK & Europe", label: "Leading university in the region", gold: true },
-              { stat: "14 Nobel Prize winners", label: "Recognizing groundbreaking research", gold: false },
-              { stat: "3 Fields Medal winners", label: "Excellence in mathematics", gold: false },
+              {
+                stat: "2nd in the world",
+                label: "QS World University Rankings 2026",
+                gold: true,
+              },
+              {
+                stat: "1st in UK & Europe",
+                label: "Leading university in the region",
+                gold: false,
+              },
+              {
+                stat: "14 Nobel Prize winners",
+                label: "Recognizing groundbreaking research",
+                gold: true,
+              },
+              {
+                stat: "Gold TEF 2023",
+                label: "Teaching Excellence Framework",
+                gold: false,
+              },
             ].map((item) => (
-              <MetallicCard key={item.stat} className="p-7 text-center" goldAccent={item.gold} steelAccent={!item.gold}>
-                <div className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.7rem", fontWeight: 700, color: item.gold ? "var(--gold)" : "#7ab3d0", lineHeight: 1.15 }}>
+              <MetallicCard
+                key={item.stat}
+                className="p-7 text-center"
+                goldAccent={item.gold}
+                steelAccent={!item.gold}
+              >
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "1.7rem",
+                    fontWeight: 700,
+                    color: item.gold ? "var(--gold)" : "#7ab3d0",
+                    lineHeight: 1.15,
+                  }}
+                >
                   {item.stat}
                 </div>
-                <div style={{ fontSize: "0.78rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.6, letterSpacing: "0.02em" }}>{item.label}</div>
+
+                <div
+                  style={{
+                    fontSize: "0.78rem",
+                    fontFamily: "Playfair Display, serif",
+                    color: "#ffffff",
+                    lineHeight: 1.6,
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {item.label}
+                </div>
               </MetallicCard>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { stat: "Gold TEF 2023", label: "Teaching Excellence Framework", gold: true },
-              { stat: "University of the Year", label: "For Graduate Employment 2026", gold: true },
-              { stat: "£1.1B Research Income", label: "2024/25 Academic Year — world-leading research institution", gold: false },
+              {
+                stat: "University of the Year",
+                label: "For Graduate Employment 2026",
+                gold: true,
+              },
+              {
+                stat: "£1.1B Research Income",
+                label:
+                  "2024/25 Academic Year — world-leading research institution",
+                gold: false,
+              },
             ].map((item) => (
-              <MetallicCard key={item.stat} className="p-7 text-center" goldAccent={item.gold} steelAccent={!item.gold}>
-                <div className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.7rem", fontWeight: 700, color: item.gold ? "var(--gold)" : "#7ab3d0", lineHeight: 1.15 }}>
+              <MetallicCard
+                key={item.stat}
+                className="p-7 text-center"
+                goldAccent={item.gold}
+                steelAccent={!item.gold}
+              >
+                <div
+                  className="mb-3"
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "1.7rem",
+                    fontWeight: 700,
+                    color: item.gold ? "var(--gold)" : "#7ab3d0",
+                    lineHeight: 1.15,
+                  }}
+                >
                   {item.stat}
                 </div>
-                <div style={{ fontSize: "0.78rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.6, letterSpacing: "0.02em" }}>{item.label}</div>
+
+                <div
+                  style={{
+                    fontSize: "0.78rem",
+                    fontFamily: "Playfair Display, serif",
+                    color: "#ffffff",
+                    lineHeight: 1.6,
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  {item.label}
+                </div>
               </MetallicCard>
             ))}
           </div>
@@ -225,211 +299,6 @@ export default function App() {
               </div>
             </div>
           </MetallicCard>
-        </section>
-
-        {/* ══ Section: Global Locations ══ */}
-        <section className="mb-28">
-          <SectionLabel>Locations</SectionLabel>
-
-          <h2
-            className="mb-4"
-            style={{
-              fontFamily: "Playfair Display, serif",
-              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-              color: "#080d1a",
-              fontWeight: 500,
-            }}
-          >
-            A global presence, locally embedded
-          </h2>
-
-          <p
-            className="mb-10"
-            style={{
-              fontSize: "0.9rem",
-              color: "#4a5a6e",
-              maxWidth: "580px",
-              lineHeight: 1.75,
-            }}
-          >
-            Imperial's international offices extend its research, talent, and
-            innovation networks across four strategic regions.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                Flag: SG,
-                country: "Singapore",
-                theme: "gold",
-                focus: "Engineering, Medicine & Technology",
-                desc:
-                  "Focuses on engineering, medicine, and technology partnerships, leveraging Singapore's position as Asia's premier innovation hub. Imperial's presence connects researchers and industry leaders across the Asia-Pacific region.",
-                points: [
-                  "Engineering and deep-tech collaborations",
-                  "Medical research and healthcare innovation",
-                  "Technology transfer and startup ecosystems",
-                ],
-              },
-              {
-                Flag: US,
-                country: "United States",
-                theme: "steel",
-                focus: "Research & Corporate Engagement",
-                desc:
-                  "Facilitates research collaborations and corporate engagements across North America's leading universities, think tanks, and Fortune 500 companies, enabling bilateral knowledge exchange and talent mobility.",
-                points: [
-                  "Joint research programmes with US universities",
-                  "Corporate partnerships and industry R&D",
-                  "Alumni network engagement across key cities",
-                ],
-              },
-              {
-                Flag: IN,
-                country: "India",
-                theme: "gold",
-                focus: "Government & Institutional Strategy",
-                desc:
-                  "A strategic hub designed to foster long-term collaborations with the Indian government, research institutes, and knowledge organisations. India represents one of Imperial's most significant emerging partnerships.",
-                points: [
-                  "Government and policy engagement",
-                  "Research institute collaborations",
-                  "Talent pipeline and academic exchange",
-                ],
-              },
-              {
-                Flag: GH,
-                country: "Ghana",
-                theme: "steel",
-                focus: "African Innovation & Development",
-                desc:
-                  "Imperial's gateway to Sub-Saharan Africa, supporting sustainable development, clean energy research, and capacity building in partnership with Ghanaian universities and government institutions.",
-                points: [
-                  "Sustainable development and climate research",
-                  "Clean energy and infrastructure innovation",
-                  "Capacity building and academic partnerships",
-                ],
-              },
-            ].map((loc) => {
-              const Flag = loc.Flag;
-
-              return (
-                <MetallicCard
-                  key={loc.country}
-                  className="p-8"
-                  goldAccent={loc.theme === "gold"}
-                  steelAccent={loc.theme === "steel"}
-                >
-                  {/* Header */}
-                  <div className="mb-5 flex items-center gap-4">
-                    <div
-                      style={{
-                        width: "48px",
-                        height: "48px",
-                        borderRadius: "50%",
-                        overflow: "hidden",
-                        flexShrink: 0,
-                        border:
-                          loc.theme === "gold"
-                            ? "2px solid rgba(212,175,55,0.4)"
-                            : "2px solid rgba(122,179,208,0.4)",
-                        boxShadow:
-                          loc.theme === "gold"
-                            ? "0 0 18px rgba(212,175,55,0.25)"
-                            : "0 0 18px rgba(122,179,208,0.25)",
-                        background: "#0f172a",
-                      }}
-                    >
-                      <Flag
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </div>
-
-                    <div>
-                      <h3
-                        style={{
-                          fontFamily: "Playfair Display, serif",
-                          fontSize: "1.2rem",
-                          fontWeight: 600,
-                          color:
-                            loc.theme === "gold"
-                              ? "var(--gold)"
-                              : "#7ab3d0",
-                          lineHeight: 1.3,
-                        }}
-                      >
-                        {loc.country}
-                      </h3>
-
-                      <p
-                        style={{
-                          fontSize: "0.72rem",
-                          fontFamily: "Playfair Display, serif",
-                          color: "#ffffff",
-                          letterSpacing: "0.05em",
-                          marginTop: "0.3rem",
-                        }}
-                      >
-                        {loc.focus}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p
-                    className="mb-5"
-                    style={{
-                      fontSize: "0.88rem",
-                      fontFamily: "Playfair Display, serif",
-                      color: "#ffffff",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    {loc.desc}
-                  </p>
-
-                  {/* Points */}
-                  <ul className="space-y-2">
-                    {loc.points.map((pt) => (
-                      <li
-                        key={pt}
-                        className="flex items-start gap-2.5"
-                      >
-                        <span
-                          style={{
-                            color:
-                              loc.theme === "gold"
-                                ? "var(--gold)"
-                                : "#7ab3d0",
-                            marginTop: "0.4rem",
-                            fontSize: "0.4rem",
-                            flexShrink: 0,
-                          }}
-                        >
-                          ◆
-                        </span>
-
-                        <p
-                          style={{
-                            fontSize: "0.83rem",
-                            fontFamily: "Playfair Display, serif",
-                            color: "#ffffff",
-                            lineHeight: 1.7,
-                          }}
-                        >
-                          {pt}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </MetallicCard>
-              );
-            })}
-          </div>
         </section>
 
         {/* ══ Section: The Imperial Difference ══ */}
@@ -876,6 +745,212 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        {/* ══ Section: Global Locations ══ */}
+        <section className="mb-28">
+          <SectionLabel>Locations</SectionLabel>
+
+          <h2
+            className="mb-4"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#080d1a",
+              fontWeight: 500,
+            }}
+          >
+            A global presence, locally embedded
+          </h2>
+
+          <p
+            className="mb-10"
+            style={{
+              fontSize: "0.9rem",
+              color: "#4a5a6e",
+              maxWidth: "580px",
+              lineHeight: 1.75,
+            }}
+          >
+            Imperial's international offices extend its research, talent, and
+            innovation networks across four strategic regions.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                Flag: SG,
+                country: "Singapore",
+                theme: "gold",
+                focus: "Engineering, Medicine & Technology",
+                desc:
+                  "Focuses on engineering, medicine, and technology partnerships, leveraging Singapore's position as Asia's premier innovation hub. Imperial's presence connects researchers and industry leaders across the Asia-Pacific region.",
+                points: [
+                  "Engineering and deep-tech collaborations",
+                  "Medical research and healthcare innovation",
+                  "Technology transfer and startup ecosystems",
+                ],
+              },
+              {
+                Flag: US,
+                country: "United States",
+                theme: "steel",
+                focus: "Research & Corporate Engagement",
+                desc:
+                  "Facilitates research collaborations and corporate engagements across North America's leading universities, think tanks, and Fortune 500 companies, enabling bilateral knowledge exchange and talent mobility.",
+                points: [
+                  "Joint research programmes with US universities",
+                  "Corporate partnerships and industry R&D",
+                  "Alumni network engagement across key cities",
+                ],
+              },
+              {
+                Flag: IN,
+                country: "India",
+                theme: "gold",
+                focus: "Government & Institutional Strategy",
+                desc:
+                  "A strategic hub designed to foster long-term collaborations with the Indian government, research institutes, and knowledge organisations. India represents one of Imperial's most significant emerging partnerships.",
+                points: [
+                  "Government and policy engagement",
+                  "Research institute collaborations",
+                  "Talent pipeline and academic exchange",
+                ],
+              },
+              {
+                Flag: GH,
+                country: "Ghana",
+                theme: "steel",
+                focus: "African Innovation & Development",
+                desc:
+                  "Imperial's gateway to Sub-Saharan Africa, supporting sustainable development, clean energy research, and capacity building in partnership with Ghanaian universities and government institutions.",
+                points: [
+                  "Sustainable development and climate research",
+                  "Clean energy and infrastructure innovation",
+                  "Capacity building and academic partnerships",
+                ],
+              },
+            ].map((loc) => {
+              const Flag = loc.Flag;
+
+              return (
+                <MetallicCard
+                  key={loc.country}
+                  className="p-8"
+                  goldAccent={loc.theme === "gold"}
+                  steelAccent={loc.theme === "steel"}
+                >
+                  {/* Header */}
+                  <div className="mb-5 flex items-center gap-4">
+                    <div
+                      style={{
+                        width: "48px",
+                        height: "48px",
+                        borderRadius: "50%",
+                        overflow: "hidden",
+                        flexShrink: 0,
+                        border:
+                          loc.theme === "gold"
+                            ? "2px solid rgba(212,175,55,0.4)"
+                            : "2px solid rgba(122,179,208,0.4)",
+                        boxShadow:
+                          loc.theme === "gold"
+                            ? "0 0 18px rgba(212,175,55,0.25)"
+                            : "0 0 18px rgba(122,179,208,0.25)",
+                        background: "#0f172a",
+                      }}
+                    >
+                      <Flag
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+                    </div>
+
+                    <div>
+                      <h3
+                        style={{
+                          fontFamily: "Playfair Display, serif",
+                          fontSize: "1.2rem",
+                          fontWeight: 600,
+                          color:
+                            loc.theme === "gold"
+                              ? "var(--gold)"
+                              : "#7ab3d0",
+                          lineHeight: 1.3,
+                        }}
+                      >
+                        {loc.country}
+                      </h3>
+
+                      <p
+                        style={{
+                          fontSize: "0.72rem",
+                          fontFamily: "Playfair Display, serif",
+                          color: "#ffffff",
+                          letterSpacing: "0.05em",
+                          marginTop: "0.3rem",
+                        }}
+                      >
+                        {loc.focus}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p
+                    className="mb-5"
+                    style={{
+                      fontSize: "0.88rem",
+                      fontFamily: "Playfair Display, serif",
+                      color: "#ffffff",
+                      lineHeight: 1.8,
+                    }}
+                  >
+                    {loc.desc}
+                  </p>
+
+                  {/* Points */}
+                  <ul className="space-y-2">
+                    {loc.points.map((pt) => (
+                      <li
+                        key={pt}
+                        className="flex items-start gap-2.5"
+                      >
+                        <span
+                          style={{
+                            color:
+                              loc.theme === "gold"
+                                ? "var(--gold)"
+                                : "#7ab3d0",
+                            marginTop: "0.4rem",
+                            fontSize: "0.4rem",
+                            flexShrink: 0,
+                          }}
+                        >
+                          ◆
+                        </span>
+
+                        <p
+                          style={{
+                            fontSize: "0.83rem",
+                            fontFamily: "Playfair Display, serif",
+                            color: "#ffffff",
+                            lineHeight: 1.7,
+                          }}
+                        >
+                          {pt}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </MetallicCard>
+              );
+            })}
+          </div>
+        </section>
+
       </main>
 
       {/* ── Footer ── */}
