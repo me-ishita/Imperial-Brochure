@@ -16,9 +16,9 @@ const NAV_ITEMS = [
   { label: "Global Standing", id: "global-standing" },
   { label: "Entrepreneurial Core", id: "entrepreneurial-core" },
   { label: "Our Community", id: "our-community" },
+  { label: "Differentiators", id: "differentiators" },
   { label: "Strategic Objectives", id: "objectives" },
   { label: "What Imperial Brings", id: "imperial-brings" },
-  { label: "Flagship Components", id: "flagship" },
   { label: "Governance", id: "governance" },
   { label: "Roadmap", id: "roadmap" },
 ];
@@ -123,108 +123,34 @@ export default function App() {
             </p>
           </MetallicCard>
 
-          {/* Stats grid */}
+          {/* Stats grid — 4 + 3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             {[
-              {
-                stat: "2nd in the world",
-                label: "QS World University Rankings 2026",
-                gold: true,
-              },
-              {
-                stat: "1st in UK & Europe",
-                label: "Leading university in the region",
-                gold: false,
-              },
-              {
-                stat: "14 Nobel Prize winners",
-                label: "Recognizing groundbreaking research",
-                gold: true,
-              },
-              {
-                stat: "Gold TEF 2023",
-                label: "Teaching Excellence Framework",
-                gold: false,
-              },
+              { stat: "2nd in the world", label: "QS World University Rankings 2026", gold: true },
+              { stat: "1st in UK & Europe", label: "Leading university in the region", gold: false },
+              { stat: "14 Nobel Prize winners", label: "Recognizing groundbreaking research", gold: true },
+              { stat: "3 Fields Medal winners", label: "Excellence in mathematics", gold: false },
             ].map((item) => (
-              <MetallicCard
-                key={item.stat}
-                className="p-7 text-center"
-                goldAccent={item.gold}
-                steelAccent={!item.gold}
-              >
-                <div
-                  className="mb-3"
-                  style={{
-                    fontFamily: "Playfair Display, serif",
-                    fontSize: "1.7rem",
-                    fontWeight: 700,
-                    color: item.gold ? "var(--gold)" : "#7ab3d0",
-                    lineHeight: 1.15,
-                  }}
-                >
+              <MetallicCard key={item.stat} className="p-7 text-center" goldAccent={item.gold} steelAccent={!item.gold}>
+                <div className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.7rem", fontWeight: 700, color: item.gold ? "var(--gold)" : "#7ab3d0", lineHeight: 1.15 }}>
                   {item.stat}
                 </div>
-
-                <div
-                  style={{
-                    fontSize: "0.78rem",
-                    fontFamily: "Playfair Display, serif",
-                    color: "#ffffff",
-                    lineHeight: 1.6,
-                    letterSpacing: "0.02em",
-                  }}
-                >
-                  {item.label}
-                </div>
+                <div style={{ fontSize: "0.78rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.6, letterSpacing: "0.02em" }}>{item.label}</div>
               </MetallicCard>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              {
-                stat: "University of the Year",
-                label: "For Graduate Employment 2026",
-                gold: true,
-              },
-              {
-                stat: "£1.1B Research Income",
-                label:
-                  "2024/25 Academic Year — world-leading research institution",
-                gold: false,
-              },
+              { stat: "Gold TEF 2023", label: "Teaching Excellence Framework", gold: true },
+              { stat: "University of the Year", label: "For Graduate Employment 2026", gold: false },
+              { stat: "£1.1B Research Income", label: "2024/25 Academic Year — world-leading research institution", gold: true },
             ].map((item) => (
-              <MetallicCard
-                key={item.stat}
-                className="p-7 text-center"
-                goldAccent={item.gold}
-                steelAccent={!item.gold}
-              >
-                <div
-                  className="mb-3"
-                  style={{
-                    fontFamily: "Playfair Display, serif",
-                    fontSize: "1.7rem",
-                    fontWeight: 700,
-                    color: item.gold ? "var(--gold)" : "#7ab3d0",
-                    lineHeight: 1.15,
-                  }}
-                >
+              <MetallicCard key={item.stat} className="p-7 text-center" goldAccent={item.gold} steelAccent={!item.gold}>
+                <div className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.7rem", fontWeight: 700, color: item.gold ? "var(--gold)" : "#7ab3d0", lineHeight: 1.15 }}>
                   {item.stat}
                 </div>
-
-                <div
-                  style={{
-                    fontSize: "0.78rem",
-                    fontFamily: "Playfair Display, serif",
-                    color: "#ffffff",
-                    lineHeight: 1.6,
-                    letterSpacing: "0.02em",
-                  }}
-                >
-                  {item.label}
-                </div>
+                <div style={{ fontSize: "0.78rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.6, letterSpacing: "0.02em" }}>{item.label}</div>
               </MetallicCard>
             ))}
           </div>
@@ -301,6 +227,7 @@ export default function App() {
           </MetallicCard>
         </section>
 
+
         {/* ══ Section: The Imperial Difference ══ */}
         <section className="mb-28">
           <SectionLabel>The Imperial Difference</SectionLabel>
@@ -372,28 +299,161 @@ export default function App() {
         {/* ══ Section: Built for Employability ══ */}
         <section className="mb-28">
           <SectionLabel>Built for Employability</SectionLabel>
-          <h2 className="mb-6" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#080d1a", fontWeight: 500 }}>
+
+          <h2
+            className="mb-6"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#080d1a",
+              fontWeight: 500,
+            }}
+          >
             University of the Year for Graduate Employment
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-            <MetallicCard className="lg:col-span-3 p-8" steelAccent>
-              <p className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.05rem", fontWeight: 300, color: "#ffffff", lineHeight: 1.85 }}>
-                Imperial was named <strong style={{ color: "#7ab3d0", fontWeight: 600 }}>University of the Year for Graduate Employment</strong> in The Times and The Sunday Times Good University Guide 2026. Its reputation page also highlights consistently strong graduate prospects and worldwide employer recognition.
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
+            {/* Main Narrative */}
+            <MetallicCard
+              className="lg:col-span-3 p-8 h-full flex flex-col justify-center"
+              steelAccent
+            >
+              <div
+                className="mb-5 inline-flex items-center self-start rounded-full px-4 py-1.5"
+                style={{
+                  background: "rgba(122,179,208,0.08)",
+                  border: "1px solid rgba(122,179,208,0.2)",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: "#7ab3d0",
+                    fontWeight: 600,
+                  }}
+                >
+                  Graduate Outcomes
+                </span>
+              </div>
+
+              <p
+                className="mb-5"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "1.05rem",
+                  fontWeight: 300,
+                  color: "#ffffff",
+                  lineHeight: 1.85,
+                }}
+              >
+                Imperial was named{" "}
+                <strong
+                  style={{
+                    color: "#7ab3d0",
+                    fontWeight: 600,
+                  }}
+                >
+                  University of the Year for Graduate Employment
+                </strong>{" "}
+                in The Times and The Sunday Times Good University Guide 2026.
+                Its reputation page also highlights consistently strong graduate
+                prospects and worldwide employer recognition.
               </p>
-              <p style={{ fontSize: "0.95rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85 }}>
-                Many Imperial courses are designed around analytical, numerical and problem-solving strengths, often using project work and real industry scenarios. That gives graduates a compelling route into science, technology, finance, consulting, healthcare and entrepreneurship.
+
+              <p
+                style={{
+                  fontSize: "0.95rem",
+                  fontFamily: "Playfair Display, serif",
+                  color: "#ffffff",
+                  lineHeight: 1.85,
+                }}
+              >
+                Many Imperial courses are designed around analytical, numerical
+                and problem-solving strengths, often using project work and real
+                industry scenarios. That gives graduates a compelling route into
+                science, technology, finance, consulting, healthcare and
+                entrepreneurship.
               </p>
             </MetallicCard>
-            <div className="lg:col-span-2 grid grid-cols-1 gap-4">
-              {["Science", "Technology", "Finance", "Consulting", "Healthcare", "Entrepreneurship"].map((field) => (
-                <MetallicCard key={field} className="p-4" goldAccent>
-                  <div className="flex items-center justify-center">
-                    <span style={{ fontSize: "0.85rem", fontFamily: "Playfair Display, serif", color: "#ffffff", fontWeight: 500, letterSpacing: "0.02em" }}>{field}</span>
+
+            {/* Career Sectors */}
+            <MetallicCard
+              className="lg:col-span-2 p-6 h-full"
+              goldAccent
+            >
+              <h3
+                className="mb-5 text-center"
+                style={{
+                  fontFamily: "Playfair Display, serif",
+                  fontSize: "1rem",
+                  color: "var(--gold)",
+                  fontWeight: 600,
+                }}
+              >
+                Career Pathways
+              </h3>
+
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  "Science",
+                  "Technology",
+                  "Finance",
+                  "Consulting",
+                  "Healthcare",
+                  "Entrepreneurship",
+                ].map((field) => (
+                  <div
+                    key={field}
+                    className="rounded-lg px-3 py-4 text-center"
+                    style={{
+                      background: "rgba(201,169,110,0.06)",
+                      border: "1px solid rgba(201,169,110,0.12)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.84rem",
+                        fontFamily: "Playfair Display, serif",
+                        color: "#ffffff",
+                        fontWeight: 500,
+                      }}
+                    >
+                      {field}
+                    </span>
                   </div>
-                </MetallicCard>
-              ))}
-            </div>
+                ))}
+              </div>
+            </MetallicCard>
           </div>
+        </section>
+
+        {/* ══ Section: Campuses ══ */}
+        <section className="mb-28">
+          <SectionLabel>White City and South Kensington</SectionLabel>
+          <h2 className="mb-6" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0f1f3d", fontWeight: 500 }}>
+            From the world's first innovation district to today's modern campus
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <MetallicCard className="p-8" goldAccent>
+              <h3 className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.15rem", color: "var(--gold)", fontWeight: 600 }}>South Kensington — Albertopolis</h3>
+              <p style={{ fontSize: "0.9rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85 }}>
+                South Kensington sits in <strong style={{ color: "var(--gold)" }}>Albertopolis, the world's first innovation district</strong>. This historic campus provides a prestigious setting rich in scientific heritage and cultural institutions.
+              </p>
+            </MetallicCard>
+            <MetallicCard className="p-8" steelAccent>
+              <h3 className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.15rem", color: "#7ab3d0", fontWeight: 600 }}>White City — Modern Innovation Campus</h3>
+              <p style={{ fontSize: "0.9rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85 }}>
+                White City is a modern innovation campus built for collaboration, incubation and commercialisation. It includes laboratories, incubator space, prototyping facilities and collaboration areas that connect researchers, startups, corporates and investors.
+              </p>
+            </MetallicCard>
+          </div>
+          <MetallicCard className="p-7 mt-6">
+            <p style={{ fontSize: "0.9rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85, textAlign: "center" }}>
+              Students benefit from being placed inside a live ecosystem rather than a purely academic setting.
+            </p>
+          </MetallicCard>
         </section>
 
         {/* ══ Section: Entrepreneurial Core ══ */}
@@ -432,33 +492,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* ══ Section: Campuses ══ */}
-        <section className="mb-28">
-          <SectionLabel>White City and South Kensington</SectionLabel>
-          <h2 className="mb-6" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0f1f3d", fontWeight: 500 }}>
-            From the world's first innovation district to today's modern campus
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <MetallicCard className="p-8" goldAccent>
-              <h3 className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.15rem", color: "var(--gold)", fontWeight: 600 }}>South Kensington — Albertopolis</h3>
-              <p style={{ fontSize: "0.9rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85 }}>
-                South Kensington sits in <strong style={{ color: "var(--gold)" }}>Albertopolis, the world's first innovation district</strong>. This historic campus provides a prestigious setting rich in scientific heritage and cultural institutions.
-              </p>
-            </MetallicCard>
-            <MetallicCard className="p-8" steelAccent>
-              <h3 className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.15rem", color: "#7ab3d0", fontWeight: 600 }}>White City — Modern Innovation Campus</h3>
-              <p style={{ fontSize: "0.9rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85 }}>
-                White City is a modern innovation campus built for collaboration, incubation and commercialisation. It includes laboratories, incubator space, prototyping facilities and collaboration areas that connect researchers, startups, corporates and investors.
-              </p>
-            </MetallicCard>
-          </div>
-          <MetallicCard className="p-7 mt-6">
-            <p style={{ fontSize: "0.9rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85, textAlign: "center" }}>
-              Students benefit from being placed inside a live ecosystem rather than a purely academic setting.
-            </p>
-          </MetallicCard>
-        </section>
-
         {/* ══ Section: Our Students and Community ══ */}
         <section id="our-community" className="mb-28 scroll-mt-20">
           <SectionLabel>Our Students and Community</SectionLabel>
@@ -495,10 +528,10 @@ export default function App() {
         </section>
 
         {/* ══ Section: Why Students Choose Imperial ══ */}
-        <section className="mb-28">
+        <section id="differentiators" className="mb-28">
           <SectionLabel>Why Students Choose Imperial</SectionLabel>
           <h2 className="mb-8" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0f1f3d", fontWeight: 500 }}>
-            Seven compelling differentiators
+            Eight compelling differentiators
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {[
@@ -511,8 +544,8 @@ export default function App() {
               { title: "Mission-led Impact", desc: "Imperial was founded to be useful and continues to focus on scientific imagination with world-changing impact." },
               { title: "Global Community", desc: "With 266,000 alumni worldwide and students from over 140 countries, Imperial offers a truly international network." },
             ].map((item, i) => (
-              <MetallicCard key={item.title} className="p-6" goldAccent={i % 3 === 0} steelAccent={i % 3 !== 0}>
-                <h3 className="mb-2" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.05rem", color: i % 3 === 0 ? "var(--gold)" : "#7ab3d0", fontWeight: 600 }}>{item.title}</h3>
+              <MetallicCard key={item.title} className="p-6" goldAccent={i % 2 === 0} steelAccent={i % 2 !== 0}>
+                <h3 className="mb-2" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.05rem", color: i % 2 === 0 ? "var(--gold)" : "#7ab3d0", fontWeight: 600 }}>{item.title}</h3>
                 <p style={{ fontSize: "0.88rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.75 }}>{item.desc}</p>
               </MetallicCard>
             ))}
@@ -538,19 +571,78 @@ export default function App() {
           <h2 className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0f1f3d", fontWeight: 500 }}>
             Three pillars aligning research with business priorities
           </h2>
-          <p className="mb-10" style={{ fontSize: "0.9rem", color: "#4a5a6e", maxWidth: "620px", lineHeight: 1.75 }}>
-            The partnership is designed around three strategic pillars that align Imperial's research and talent with financial institutions' business priorities and sustainability agendas.
-          </p>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { num: "01", title: "Climate & Sustainable Finance Innovation", body: "Scale early‑stage ventures that mitigate or adapt to climate change, building on Imperial's climate innovation platforms and the financial sector's climate programmes. Develop new products and structures in sustainable finance, from green bonds to transition finance instruments, supported by research from the Grantham Institute and Imperial's finance faculty.", gold: true },
-              { num: "02", title: "Future‑ready Financial Talent", body: "Create a privileged talent pipeline into Imperial's premier MSc programmes in Finance, FinTech, Risk Management, Investment & Wealth Management, Quantitative Finance and Machine Learning & Finance. Co‑design executive and professional programmes to upskill leaders globally in sustainable finance, climate risk, digital assets and AI in financial services.", gold: false },
-              { num: "03", title: "Thought Leadership & Policy Impact", body: "Position Imperial and financial sector partners as co‑authors of agenda‑setting research on climate risk, ESG data, digital assets and AI in finance. Convene global dialogues with policymakers, regulators, investors and startups through joint summits, roundtables and white papers in London.", gold: false },
+              {
+                num: "01",
+                title: "Climate & Sustainable Finance Innovation",
+                body:
+                  "Scale early-stage ventures addressing climate challenges through Imperial's innovation ecosystem and the financial sector's sustainability initiatives. Develop next-generation sustainable finance solutions, from green bonds to transition finance instruments, supported by research from the Grantham Institute and Imperial's finance faculty.",
+                gold: true,
+              },
+              {
+                num: "02",
+                title: "Future-ready Financial Talent",
+                body:
+                  "Create a privileged talent pipeline into Imperial's premier MSc programmes in Finance, FinTech, Risk Management, Investment & Wealth Management, Quantitative Finance and Machine Learning & Finance. Co-design executive and professional programmes to upskill leaders globally in sustainable finance, climate risk, digital assets and AI in financial services.",
+                gold: false,
+              },
+              {
+                num: "03",
+                title: "Thought Leadership & Policy Impact",
+                body:
+                  "Position Imperial and financial sector partners as co-authors of agenda-setting research on climate risk, ESG data, digital assets and AI in finance. Convene global dialogues with policymakers, regulators, investors and startups through joint summits, roundtables and white papers in London.",
+                gold: true,
+              },
             ].map((pillar) => (
-              <MetallicCard key={pillar.num} className="p-7" goldAccent={pillar.gold} steelAccent={!pillar.gold}>
-                <div className="mb-5" style={{ fontFamily: "Playfair Display, serif", fontSize: "2.8rem", fontWeight: 700, lineHeight: 1, color: pillar.gold ? "rgba(201,169,110,0.18)" : "rgba(74,127,165,0.18)", letterSpacing: "-0.02em" }}>{pillar.num}</div>
-                <h3 className="mb-3" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.1rem", fontWeight: 600, color: pillar.gold ? "var(--gold)" : "#7ab3d0", lineHeight: 1.35 }}>{pillar.title}</h3>
-                <p style={{ fontSize: "0.85rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.8 }}>{pillar.body}</p>
+              <MetallicCard
+                key={pillar.num}
+                className="p-7 h-full flex flex-col"
+                goldAccent={pillar.gold}
+                steelAccent={!pillar.gold}
+              >
+                <div
+                  className="mb-5"
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "2.8rem",
+                    fontWeight: 700,
+                    lineHeight: 1,
+                    color: pillar.gold
+                      ? "rgba(201,169,110,0.18)"
+                      : "rgba(74,127,165,0.18)",
+                    letterSpacing: "-0.02em",
+                  }}
+                >
+                  {pillar.num}
+                </div>
+
+                <h3
+                  className="mb-3"
+                  style={{
+                    fontFamily: "Playfair Display, serif",
+                    fontSize: "1.1rem",
+                    fontWeight: 600,
+                    color: pillar.gold ? "var(--gold)" : "#7ab3d0",
+                    lineHeight: 1.35,
+                    minHeight: "3rem",
+                  }}
+                >
+                  {pillar.title}
+                </h3>
+
+                <p
+                  style={{
+                    fontSize: "0.85rem",
+                    fontFamily: "Playfair Display, serif",
+                    color: "#ffffff",
+                    lineHeight: 1.8,
+                    flexGrow: 1,
+                  }}
+                >
+                  {pillar.body}
+                </p>
               </MetallicCard>
             ))}
           </div>
@@ -608,76 +700,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* ══ Section: Flagship Partnership Components ══ */}
-        <section id="flagship" className="mb-28 scroll-mt-20">
-          <SectionLabel>Flagship Partnership Components</SectionLabel>
-          <h2 className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0f1f3d", fontWeight: 500 }}>
-            A modular portfolio of initiatives
-          </h2>
-          <p className="mb-10" style={{ fontSize: "0.9rem", color: "#4a5a6e", maxWidth: "620px", lineHeight: 1.75 }}>
-            A modular portfolio of initiatives allows the partnership to be tuned to strategic priorities and target geographies. The final mix can be tuned to each partner's priorities across wealth, markets, retail and wholesale, and across regions such as the UK, Asia and MENA.
-          </p>
-          <MetallicCard className="overflow-hidden" goldAccent>
-            <div className="grid" style={{ gridTemplateColumns: "1fr 2fr" }}>
-              <div className="px-6 py-4" style={{ borderBottom: "1px solid rgba(201,169,110,0.15)", background: "rgba(201,169,110,0.06)" }}>
-                <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--gold)", fontFamily: "Inter, sans-serif" }}>Pillar</span>
-              </div>
-              <div className="px-6 py-4" style={{ borderBottom: "1px solid rgba(201,169,110,0.15)", background: "rgba(201,169,110,0.06)", borderLeft: "1px solid rgba(201,169,110,0.12)" }}>
-                <span style={{ fontSize: "0.65rem", letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--gold)", fontFamily: "Inter, sans-serif" }}>Illustrative Initiative</span>
-              </div>
-              {[
-                { pillar: "Climate & Cleantech", initiative: "Imperial–Financial Services Greenhouse: accelerator for climate and nature‑positive startups." },
-                { pillar: "Sustainable Finance", initiative: "Joint Sustainable Finance & Investing executive programme for financial sector leaders." },
-                { pillar: "Climate Risk & Analytics", initiative: "Co‑developed climate stress‑testing and transition risk models for key portfolios." },
-                { pillar: "AI & FinTech Innovation", initiative: "Joint research projects on AI in trading, risk and fraud; lab‑based pilots with financial firms." },
-                { pillar: "Talent & Recruitment", initiative: "Preferred recruitment partnership across Imperial's finance and data MSc programmes." },
-                { pillar: "Thought Leadership", initiative: "Annual Imperial–Financial Services Sustainable Finance & Innovation Summit in London." },
-              ].map((row, i) => (
-                <div key={row.pillar} className="contents">
-                  <div className="px-6 py-5" style={{ borderBottom: i < 5 ? "1px solid rgba(201,169,110,0.08)" : "none", background: i % 2 === 0 ? "transparent" : "rgba(201,169,110,0.02)" }}>
-                    <span style={{ fontSize: "0.85rem", fontWeight: 500, color: "var(--gold)" }}>{row.pillar}</span>
-                  </div>
-                  <div className="px-6 py-5" style={{ borderBottom: i < 5 ? "1px solid rgba(201,169,110,0.08)" : "none", borderLeft: "1px solid rgba(201,169,110,0.12)", background: i % 2 === 0 ? "transparent" : "rgba(201,169,110,0.02)" }}>
-                    <span style={{ fontSize: "0.85rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.7 }}>{row.initiative}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </MetallicCard>
-        </section>
-
-        {/* ══ Section: Climate Solutions ══ */}
-        <section id="climate" className="mb-28 scroll-mt-20">
-          <SectionLabel>Climate Solutions &amp; Impact</SectionLabel>
-          <h2 className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0f1f3d", fontWeight: 500 }}>
-            From research to commercial scale
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <MetallicCard className="p-8" steelAccent>
-              <p style={{ fontSize: "0.9rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85 }}>
-                Philanthropic funding and strategic partnerships from financial institutions have enabled Imperial to launch cleantech innovation programmes that support UK startups with grants, workspace, mentoring and commercialisation support, targeting technologies with measurable climate impact.
-              </p>
-              <div className="mt-6 p-5 rounded-xl" style={{ background: "rgba(74,127,165,0.06)", border: "1px solid rgba(74,127,165,0.15)" }}>
-                <div className="flex items-center gap-3">
-                  <div style={{ fontFamily: "Playfair Display, serif", fontSize: "2.5rem", fontWeight: 700, color: "#7ab3d0", lineHeight: 1 }}>100+</div>
-                  <div style={{ fontSize: "0.8rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.5 }}>climate‑focused ventures<br />backed to date</div>
-                </div>
-              </div>
-            </MetallicCard>
-            <MetallicCard className="p-8" goldAccent>
-              <h3 className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.05rem", color: "var(--gold)", fontWeight: 600 }}>An expanded model could:</h3>
-              <ul className="space-y-3">
-                {["Scale the number of ventures supported", "Deepen access to sector experts and clients", "Develop impact measurement frameworks for avoided emissions and co‑benefits", "Explore sustainable finance instruments linking institutional capital directly to Imperial‑backed ventures"].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span style={{ color: "var(--gold)", marginTop: "0.4rem", fontSize: "0.45rem", flexShrink: 0 }}>◆</span>
-                    <p style={{ fontSize: "0.85rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.75 }}>{item}</p>
-                  </li>
-                ))}
-              </ul>
-            </MetallicCard>
-          </div>
-        </section>
-
         {/* ══ Section: Governance ══ */}
         <section id="governance" className="mb-28 scroll-mt-20">
           <SectionLabel>Governance &amp; Engagement Model</SectionLabel>
@@ -697,11 +719,46 @@ export default function App() {
             ))}
           </div>
           <MetallicCard className="p-7">
-            <h3 className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "1rem", color: "var(--gold)", fontWeight: 600 }}>Shared Scorecard — outcomes tracked include:</h3>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              {["Ventures supported", "Employees trained", "Joint publications", "Pilots launched", "Capital mobilised"].map((metric) => (
-                <div key={metric} className="rounded-lg p-3 text-center" style={{ background: "rgba(201,169,110,0.06)", border: "1px solid rgba(201,169,110,0.12)" }}>
-                  <span style={{ fontSize: "0.75rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.5, display: "block" }}>{metric}</span>
+            <h3
+              className="mb-4"
+              style={{
+                fontFamily: "Playfair Display, serif",
+                fontSize: "1rem",
+                color: "var(--gold)",
+                fontWeight: 600,
+              }}
+            >
+              Shared Scorecard — outcomes tracked include:
+            </h3>
+
+            <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+              {[
+                "Ventures supported",
+                "Students trained",
+                "Joint publications",
+                "Round the Table",
+                "Pilots launched",
+                "Events",
+              ].map((metric) => (
+                <div
+                  key={metric}
+                  className="rounded-lg p-3 text-center"
+                  style={{
+                    background: "rgba(201,169,110,0.06)",
+                    border: "1px solid rgba(201,169,110,0.12)",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.75rem",
+                      fontFamily: "Playfair Display, serif",
+                      color: "#ffffff",
+                      lineHeight: 1.5,
+                      display: "block",
+                    }}
+                  >
+                    {metric}
+                  </span>
                 </div>
               ))}
             </div>
@@ -711,33 +768,152 @@ export default function App() {
         {/* ══ Section: Roadmap ══ */}
         <section id="roadmap" className="mb-16 scroll-mt-20">
           <SectionLabel>Next Steps &amp; Roadmap</SectionLabel>
-          <h2 className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#0f1f3d", fontWeight: 500 }}>
+
+          <h2
+            className="mb-4"
+            style={{
+              fontFamily: "Playfair Display, serif",
+              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+              color: "#0f1f3d",
+              fontWeight: 500,
+            }}
+          >
             A phased roadmap from concept to scaled impact
           </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { phase: "Phase 1", period: "0–3 months", label: "Design", items: ["Align on objectives, governance, priority themes and target geographies", "Finalise initial flagship initiatives such as an accelerator cohort, executive programme and pilot projects"], gold: true },
-              { phase: "Phase 2", period: "3–12 months", label: "Launch", items: ["Launch the first joint accelerator cohort and executive programme", "Announce the partnership publicly with a Sustainable Finance & Innovation Forum in London"], gold: false },
-              { phase: "Phase 3", period: "Year 2–3", label: "Scale", items: ["Extend the partnership to additional markets and business lines", "Deepen regulatory and policy engagement", "Launch second‑generation products and research projects"], gold: true },
+              {
+                phase: "Phase 1",
+                label: "Design",
+                gold: true,
+                items: [
+                  "Align objectives, governance and priority themes",
+                  "Define target markets and strategic opportunities",
+                  "Finalise flagship initiatives and pilot programmes",
+                ],
+              },
+              {
+                phase: "Phase 2",
+                label: "Launch",
+                gold: false,
+                items: [
+                  "Launch the first accelerator cohort",
+                  "Deliver the inaugural executive programme",
+                  "Announce the partnership through a London forum",
+                ],
+              },
+              {
+                phase: "Phase 3",
+                label: "Scale",
+                gold: true,
+                items: [
+                  "Expand into additional markets and sectors",
+                  "Deepen policy and regulatory engagement",
+                  "Launch next-generation products and research",
+                ],
+              },
             ].map((phase, i) => (
-              <MetallicCard key={phase.phase} className="p-7 relative overflow-visible" goldAccent={phase.gold} steelAccent={!phase.gold}>
+              <MetallicCard
+                key={phase.phase}
+                className="p-8 h-full flex flex-col relative overflow-visible"
+                goldAccent={phase.gold}
+                steelAccent={!phase.gold}
+              >
+                {/* Connector Line */}
                 {i < 2 && (
-                  <div className="hidden md:block absolute top-10 -right-3 z-10 w-6 h-px" style={{ background: "linear-gradient(90deg, rgba(201,169,110,0.4), rgba(201,169,110,0.1))" }} />
+                  <div
+                    className="hidden md:block absolute top-12 -right-3 z-10 w-6 h-px"
+                    style={{
+                      background: phase.gold
+                        ? "linear-gradient(90deg, rgba(201,169,110,0.5), rgba(201,169,110,0.08))"
+                        : "linear-gradient(90deg, rgba(122,179,208,0.5), rgba(122,179,208,0.08))",
+                    }}
+                  />
                 )}
-                <div className="flex items-start gap-3 mb-5">
-                  <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: phase.gold ? "rgba(201,169,110,0.12)" : "rgba(74,127,165,0.12)", border: phase.gold ? "1px solid rgba(201,169,110,0.3)" : "1px solid rgba(74,127,165,0.3)" }}>
-                    <span style={{ fontSize: "0.7rem", fontWeight: 700, color: phase.gold ? "var(--gold)" : "#7ab3d0" }}>{i + 1}</span>
+
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: phase.gold
+                        ? "rgba(201,169,110,0.12)"
+                        : "rgba(74,127,165,0.12)",
+                      border: phase.gold
+                        ? "1px solid rgba(201,169,110,0.35)"
+                        : "1px solid rgba(74,127,165,0.35)",
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.95rem",
+                        fontWeight: 700,
+                        color: phase.gold ? "var(--gold)" : "#7ab3d0",
+                      }}
+                    >
+                      {i + 1}
+                    </span>
                   </div>
+
                   <div>
-                    <div style={{ fontSize: "0.65rem", letterSpacing: "0.12em", textTransform: "uppercase", color: phase.gold ? "var(--gold)" : "#7ab3d0", fontFamily: "Inter, sans-serif" }}>{phase.phase} — {phase.label}</div>
-                    <div style={{ fontSize: "0.75rem", fontFamily: "Playfair Display, serif", color: "#ffffff" }}>{phase.period}</div>
+                    <div
+                      style={{
+                        fontSize: "0.68rem",
+                        letterSpacing: "0.16em",
+                        textTransform: "uppercase",
+                        color: phase.gold ? "var(--gold)" : "#7ab3d0",
+                        fontFamily: "Inter, sans-serif",
+                        marginBottom: "0.35rem",
+                      }}
+                    >
+                      {phase.phase}
+                    </div>
+
+                    <h3
+                      style={{
+                        fontFamily: "Playfair Display, serif",
+                        fontSize: "1.15rem",
+                        fontWeight: 600,
+                        color: phase.gold ? "var(--gold)" : "#7ab3d0",
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {phase.label}
+                    </h3>
                   </div>
                 </div>
-                <ul className="space-y-3">
+
+                {/* Content */}
+                <ul className="space-y-4 flex-grow">
                   {phase.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5">
-                      <span style={{ color: phase.gold ? "var(--gold)" : "#7ab3d0", marginTop: "0.4rem", fontSize: "0.4rem", flexShrink: 0 }}>◆</span>
-                      <p style={{ fontSize: "0.83rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.75 }}>{item}</p>
+                    <li
+                      key={item}
+                      className="flex items-start gap-3"
+                    >
+                      <span
+                        style={{
+                          color: phase.gold
+                            ? "var(--gold)"
+                            : "#7ab3d0",
+                          marginTop: "0.45rem",
+                          fontSize: "0.45rem",
+                          flexShrink: 0,
+                        }}
+                      >
+                        ◆
+                      </span>
+
+                      <p
+                        style={{
+                          fontSize: "0.84rem",
+                          fontFamily: "Playfair Display, serif",
+                          color: "#ffffff",
+                          lineHeight: 1.8,
+                        }}
+                      >
+                        {item}
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -761,19 +937,6 @@ export default function App() {
           >
             A global presence, locally embedded
           </h2>
-
-          <p
-            className="mb-10"
-            style={{
-              fontSize: "0.9rem",
-              color: "#4a5a6e",
-              maxWidth: "580px",
-              lineHeight: 1.75,
-            }}
-          >
-            Imperial's international offices extend its research, talent, and
-            innovation networks across four strategic regions.
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
