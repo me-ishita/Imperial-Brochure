@@ -280,22 +280,6 @@ export default function App() {
           </MetallicCard>
         </section>
 
-        {/* ══ Section: Research That Leads ══ */}
-        <section className="mb-28">
-          <SectionLabel>Research That Leads</SectionLabel>
-          <h2 className="mb-6" style={{ fontFamily: "Playfair Display, serif", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "#080d1a", fontWeight: 500 }}>
-            World-leading research excellence
-          </h2>
-          <MetallicCard className="p-8 mb-6" goldAccent>
-            <p className="mb-4" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.05rem", fontWeight: 300, color: "#ffffff", lineHeight: 1.85 }}>
-              According to the <strong style={{ color: "var(--gold)", fontWeight: 600 }}>Research Excellence Framework 2021</strong>, Imperial has a greater proportion of world-leading 4-star research than any other UK university. The same results place Imperial <strong style={{ color: "var(--gold)", fontWeight: 600 }}>first in the UK for research outputs and research environment</strong>, and first for research impact among Russell Group universities.
-            </p>
-            <p style={{ fontSize: "0.95rem", fontFamily: "Playfair Display, serif", color: "#ffffff", lineHeight: 1.85 }}>
-              Imperial was also built on a distinguished history of invention, from pioneering penicillin, holography and fibre optics to today's frontier work in climate, health, AI and advanced engineering. The institution's research culture is designed to solve major global challenges at pace and scale.
-            </p>
-          </MetallicCard>
-        </section>
-
         {/* ══ Section: Built for Employability ══ */}
         <section className="mb-28">
           <SectionLabel>Built for Employability</SectionLabel>
@@ -550,19 +534,6 @@ export default function App() {
               </MetallicCard>
             ))}
           </div>
-        </section>
-
-        {/* ══ Section: Positioning Statement ══ */}
-        <section className="mb-28">
-          <SectionLabel>Positioning Statement</SectionLabel>
-          <MetallicCard className="p-10" goldAccent>
-            <p className="mb-5" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.2rem", fontWeight: 300, color: "var(--gold)", lineHeight: 1.9, fontStyle: "italic" }}>
-              Imperial is not simply a prestigious London university. It is a <strong style={{ color: "var(--gold)", fontWeight: 600 }}>specialist, globally ranked institution</strong> where rigorous academic excellence meets frontier research, entrepreneurial execution and practical relevance.
-            </p>
-            <p style={{ fontFamily: "Playfair Display, serif", fontSize: "1.1rem", fontWeight: 300, color: "#ffffff", lineHeight: 1.85 }}>
-              For students comparing Imperial with other top universities, the distinction is clear: Imperial combines elite scientific reputation with a culture of impact, built for people who want not only to study the future, but to <strong style={{ color: "var(--gold)", fontWeight: 600 }}>shape it</strong>.
-            </p>
-          </MetallicCard>
         </section>
 
         {/* ══ Section: Strategic Objectives ══ */}
@@ -1112,6 +1083,19 @@ export default function App() {
               );
             })}
           </div>
+        </section>
+
+        {/* ══ Section: Positioning Statement ══ */}
+        <section className="mb-28">
+          <SectionLabel>Positioning Statement</SectionLabel>
+          <MetallicCard className="p-10" goldAccent>
+            <p className="mb-5" style={{ fontFamily: "Playfair Display, serif", fontSize: "1.2rem", fontWeight: 300, color: "var(--gold)", lineHeight: 1.9, fontStyle: "italic" }}>
+              Imperial is not simply a prestigious London university. It is a <strong style={{ color: "var(--gold)", fontWeight: 600 }}>specialist, globally ranked institution</strong> where rigorous academic excellence meets frontier research, entrepreneurial execution and practical relevance.
+            </p>
+            <p style={{ fontFamily: "Playfair Display, serif", fontSize: "1.1rem", fontWeight: 300, color: "#ffffff", lineHeight: 1.85 }}>
+              For students comparing Imperial with other top universities, the distinction is clear: Imperial combines elite scientific reputation with a culture of impact, built for people who want not only to study the future, but to <strong style={{ color: "var(--gold)", fontWeight: 600 }}>shape it</strong>.
+            </p>
+          </MetallicCard>
         </section>
 
       </main>
